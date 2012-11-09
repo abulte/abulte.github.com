@@ -5,8 +5,6 @@ baseline: Genèse et recette de ce blog basé sur Jekyll. Et un nouveau souffle 
 tags: [github, jekyll, web]
 ---
 
-### Le problème de départ
-
 Après des années passées à intégrer, vendre, hacker, encenser et haïr des CMS "classiques", j'ai voulu explorer une autre voie. Avec le recul, tout CMS - aussi léger (qui a dit _WordPress_ ?) ou complet (qui a dit _Drupal_ ?) soit-il censé être - me paraît en effet bien triste/lent/complexe par rapport à mon pauvre besoin de quelques articles par (en pointe)…
 
 ### La quête
