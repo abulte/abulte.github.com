@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Mon blog est statique ! | cat @abulte > weblog</title>
+		<link rel='stylesheet'  href='/css/style.css' type='text/css' media='all' />
+		<link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+        <link rel="meta" type="application/rdf+xml" title="FOAF" href="/foaf.rdf" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-34895030-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<header>
+			<div>
+				<nav>
+					<ul>
+						<li><a href="/archive.html" title="Archives">Archives</a></li>
+						<li><a href="/about.html" title="L'auteur">L'auteur</a></li>
+					</ul>
+				</nav>
+				<p id="logo"><a href="/" title="cat @abulte > weblog">cat @abulte > weblog</a></p>
+			</div>
+		</header>
+
+		<div id="content">
+		<div id="post">
+<h2>09 novembre 2012</h2>
+<h1>Mon blog est statique !</h1>
+<p class="baseline">Genèse et recette de ce blog basé sur Jekyll. Et un nouveau souffle pour la gestion de contenu ?</p>
+
+<p>Après des années passées à intégrer, vendre, hacker, encenser et haïr des CMS &#8220;classiques&#8221;, j&#8217;ai voulu explorer une autre voie. Avec le recul, tout CMS - aussi léger (qui a dit <em>WordPress</em> ?) ou complet (qui a dit <em>Drupal</em> ?) soit-il censé être - me paraît en effet bien triste/lent/complexe par rapport à mon pauvre besoin de quelques articles par (en pointe)…</p>
+
+<h3 id='la_qute'>La quête</h3>
+
+<p>Armé de ces bonnes intentions et d&#8217;un indéfectible esprit de vengeance, j&#8217;ai commencé à chercher des solutions beaucoup plus minimalistes qui offriraient quand même un certain &#8220;confort technique&#8221; par rapport à une solution complètement statique (i.e. une collection de pages HTML écrites à la main).</p>
+
+<blockquote>
+<p>Du minimalisme : je suis conscient que cet aspect ne constitue pas forcément une priorité pour le commun des mortels. Il s&#8217;agit pourtant d&#8217;une notion très importante pour moi et d&#8217;un angle sous lequel j&#8217;essaie de considérer chacun de mes choix : la solution optimale est pour moi celle qui parvient au résultat attendu en utilisant un minimum de ressources.</p>
+</blockquote>
+
+<p>Le challenge n&#8217;est pas tant de trouver quelque chose d&#8217;innovant au niveau de la publication - après tout il ne s&#8217;agit que d&#8217;afficher une page - mais bien au niveau de la création des pages et d&#8217;un schéma de navigation (i.e. les liaisons intelligentes ou non entre les différentes pages produites) ainsi que du déploiement du contenu produit. Après tout, c&#8217;est pour répondre à ces challenges que les CMS ont été créés et je ne m&#8217;attendais pas à trouver de solutions dont le confort pourrait être comparable à ces derniers.</p>
+
+<h3 id='leldorado'>L&#8217;eldorado</h3>
+
+<p>Et c&#8217;est à ce moment là que j&#8217;ai réalisé que j&#8217;avais complètement tort :-). Il se trouve que le monde du Web grouille de solutions alternatives et agréable à utiliser permettant de mettre en place des solutions simples face à des problèmes considérés comme complexes. Le plus impressionnant est que ces solutions ne s&#8217;appliquent pas qu&#8217;au cas des petits sites comme celui que vous visitez : il est possible de traiter la plupart des problématiques classiques des CMS, sur des projets d&#8217;envergure, grâce à des solutions simples et interconnectées.</p>
+
+<p>L&#8217;exemple le plus frappant pour moi est celui de la société Developpement Seed. En gros, un intégrateur leader historique sur le CMS Drupal a choisi (il y a déjà 2 ans !) d&#8217;abandonner Drupal - ou tout autre CMS - pour construire leurs sites et ceux de leurs clients. <a href='http://developmentseed.org/blog/2012/07/27/build-cms-free-websites/'>L&#8217;histoire est racontée ici</a>.</p>
+
+<h3 id='lheure_du_choix'>L&#8217;heure du choix</h3>
+
+<p>A partir de là, c&#8217;est devenu relativement simple de choisir mes armes. Je suis parti sur la solution qui semble la plus populaire pour construire un site &#8220;dynamique&#8221; sans CMS : <a href='http://jekyllrb.com'>Jekyll</a>. Celui-ci a été créé par un petit gars de Github pour, en gros, générer un site statique (du HTML, donc) à partir de fichiers <a href='Markdown'>http://daringfireball.net/projects/markdown/</a> qui représentent le contenu (l&#8217;équivalent des pages, des articles ou des noeuds). En plus de cette conversion - qui n&#8217;a rien de révolutionnaire - Jekyll ajoute quelques fonctionnalités bien pratiques pour créer votre fameux schéma de navigation sans tout créer / gérer à la main. Vous bénéficier ainsi de la gestion des tags, catégories, archives et URLs simplifiés pour ne citer qu&#8217;eux.</p>
+
+<p>Pour écrire mes articles en Markdown avec une interface sympa, j&#8217;utilise <a href='http://mouapp.com'>l&#8217;excellent éditeur Mou par Mac OS</a>.</p>
+
+<p>Jekyll a un autre avantage : il est parfaitement intégré à la plateforme <a href='https://github.com'>Github</a>, paternité oblige. Il suffit ainsi de se créer un dépôt accessible selon le principe des <a href='https://help.github.com/articles/user-organization-and-project-pages'>Github pages</a> et d&#8217;y pusher (via Git, bien sûr) vos sources Jekyll. Et hop, votre site est versionné, généré, hébergé et peut résister à une publication sur Hacker News… En plus son code source est dispo sur Github ;-)</p>
+
+<h3 id='statique_cest_sympa_mais'>Statique c&#8217;est sympa, mais…</h3>
+
+<p>Si vous êtes arrivés jusqu&#8217;ici vous avez certainement perçu une limite évidente à ce système : tout ne peut pas être statique. Exemple simple et indispensable : les commentaires. Réponse simple : <a href='http://disqus.com'>Disqus</a>. Il s&#8217;agit d&#8217;un service en ligne (mode SaaS) permettant d&#8217;enregistrer, afficher et gérer les commentaires sur votre site. L&#8217;inclusion se fait via Javascript et ne requiert <em>aucun</em> code serveur. C&#8217;est donc compatible avec votre site statique !</p>
+
+<p>Et cette philosophie s&#8217;applique à beaucoup des fonctionnalités dynamiques dont vous aurez besoin. Notre Web a aujourd&#8217;hui tendance à se construire comme ça : des services spécialisés et faciles à intégrer. Je citerai par exemple également <a href='http://mapbox.com'>Mapbox</a> pour la cartographie. Et si le service n&#8217;existe pas ou qu&#8217;aucun ne vous convient : créez-le, faites-lui une belle API JS et rendez-le accessible à tous !</p>
+
+<h3 id='et_mes_yeux_'>Et mes yeux ?</h3>
+
+<p>Il ne restait qu&#8217;à rendre le tout ~~beau~~ visuellement acceptable. N&#8217;ayant absolument aucun talent graphique, je me suis bien évidemment tourné vers des briques existantes. Je voulais quelque chose de (très) simple, extensible et avec une belle grosse police. Je suis tombé sur <a href='https://github.com/stephan83/stephan83.github.com'>l&#8217;excellent thème Jekyll de Stéphane Florquin</a>. Quelques modifications chromatiques et géométrique plus tard, le tour était joué. Je tiens à dire que <strong>le tout tient dans une feuille de style de CSS de 300 lignes</strong>, ce qui m&#8217;a presque réconcilié avec cette techno.</p>
+
+<h3 id='le_gras_statique_cest_la_vie'>Le ~~gras~~ statique, c&#8217;est la vie</h3>
+
+<p>En plus de faire de mon exercice d&#8217;auto-satisfaction (écrire un blog) un challenge techniquement intéressant, je me suis pris à rêver d&#8217;un avenir meilleur pour nous, ouvriers du Web : des outils simples, spécialisés, maintenus par des gens que ça intéresse au service de contributeurs qui peuvent se concentrer sur leur métier… Plus sérieusement je crois / j&#8217;espère que ce genre de solutions va percer dans le marché de la gestion de contenu, qui me paraît assez engoncé dans des routines qui commencent à dater.</p>
+
+<h3 id='ressources_supplmentaires'>Ressources supplémentaires</h3>
+
+<p>Un très bon article qui résume tout le processus : <a href='http://brianscaturro.com/2012/06/12/blog-with-jekyll-and-github.html'>http://brianscaturro.com/2012/06/12/blog-with-jekyll-and-github.html</a>.</p>
+
+<p>Un site / outil pour démarrer plus facilement avec Jekyll (des thèmes, des explications…) : <a href='http://jekyllbootstrap.com'>http://jekyllbootstrap.com</a>.</p>
+
+<p>Pour ceux qui trouvent que le Markdown c&#8217;est vraiment pas possible, un éditeur en ligne type WYSIWYG : <a href='http://prose.io'>http://prose.io</a>.</p>
+
+<p>Une alternative à Jekyll en Python : Pelican <a href='https://github.com/getpelican/pelican/'>https://github.com/getpelican/pelican/</a>.</p>
+
+
+	<div id="posts">
+		<h3>See also...</h3>
+
+		
+	</div>
+
+
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bulte';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<footer>
+			<p>Turned into a monster by <a href="http://jekyllrb.com">Jekyll</a>, theme inspired by <a href="http://stephan83.github.com">Stephan Florquin</a></p>
+		</footer>
+
+		<div><a href="https://github.com/abulte/abulte.github.com"><img style="position: fixed; top: 0; left: 0; border: 0; z-index: 32001;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a></div>
+	</body>
+</html>
