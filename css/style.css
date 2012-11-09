@@ -291,3 +291,37 @@ footer  {
 .gist  pre {
   font-size: 1em;
 }
+
+/* =Responsive
+-------------------------------------------------------------- */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 320px)
+and (max-width : 600px) {
+  #github_ribbon {
+    visibility: hidden;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  header nav {
+    display: block;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  #content {
+    max-width: 780px;
+    padding: 0 10px;
+    margin: 5em auto 3em;
+    text-align: justify;
+    -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;
+  }
+}
