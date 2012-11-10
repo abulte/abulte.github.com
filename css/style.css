@@ -134,6 +134,11 @@ header div {
   padding: .2em 0 .4em;
   display: block;
   float: left;
+  background-image: url('http://www.gravatar.com/avatar/fde6f8b5ab97772e0aa35f0a0fc79a2d.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 80px;
+  background-size: 15%;
 }
 
 header a {
@@ -303,14 +308,29 @@ and (max-width : 600px) {
     visibility: hidden;
   }
 
-  header {
-    position: absolute;
-    top: 0;
-    width: 100%;
+  #logo a {
+    font-size: 0.8em;
+    padding: 0 0.2em 0 0.2em;
+    display: block;
+    float: left;
+    background-image: none;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 15%;
   }
+
 
   header nav {
     display: block;
+    font-size: 0.8em;
+  }
+
+  header nav a {
+    text-transform: uppercase;
+    font-size: .9em;
+    display: block;
+    /*padding: .2em .2em .4em;*/
+    padding: 0 0.2em 0 0.2em;
   }
 
   h1 {
@@ -320,7 +340,7 @@ and (max-width : 600px) {
   #content {
     max-width: 780px;
     padding: 0 10px;
-    margin: 5em auto 3em;
+    margin: 2em auto 3em;
     text-align: justify;
     -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;
   }
