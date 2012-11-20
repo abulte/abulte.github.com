@@ -125,7 +125,7 @@ header {
 }
 
 header div {
-  max-width: 780px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
@@ -168,7 +168,7 @@ header nav a:hover {
 -------------------------------------------------------------- */
 
 footer  {
-  max-width: 780px;
+  max-width: 750px;
   margin: 0 auto;
   font-size: .7em;
   font-style: italic;
@@ -182,7 +182,7 @@ footer  {
 -------------------------------------------------------------- */
 
 #content {
-  max-width: 780px;
+  max-width: 750px;
   padding: 0 40px;
   margin: 5em auto 3em;
   text-align: justify;
