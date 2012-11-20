@@ -12,7 +12,8 @@ rm -rf ../abulte.github.com/*
 cp -a _site/* ../abulte.github.com/
 # cd static export
 cd ../abulte.github.com
-# git commit (master branch)
+# git add & commit (master branch)
+git add .
 git commit -a -m "$COMMIT_MSG"
 # git push (master branch)
 git push origin master
