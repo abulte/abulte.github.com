@@ -14,7 +14,7 @@ tags: [durable, écolo]
 
 #### Réduction drastique de ma consommation de viande rouge.
 
-<p><img src="../img/empreinte.png" class="image-right" />Après avoir longuement réfléchi sur le scandale écologique en cours et à venir de la folle consommation de viande par l'humanité, j'ai décidé d'agir à mon niveau. Je suis passé d'une consommation de viande rouge (boeuf principalement, j'en étais friand) de plusieurs fois par semaine à une fois par mois maximum. Du coup, je mange notamment beaucoup plus de poulet et oeufs, qui semblent exercer bien moindre sur l'environnement. Voir le tableau ci-contre. Il se trouve que cette décision a été plutôt facile à mettre en oeuvre, ce sont de (mauvaises) habitudes de consommation qu'on change finalement très facilement.
+<p><img src="../img/empreinte.png" class="image-right" />Après avoir longuement réfléchi sur le scandale écologique en cours et à venir de la folle consommation de viande par l'humanité, j'ai décidé d'agir à mon niveau. Je suis passé d'une consommation de viande rouge (boeuf principalement, j'en étais friand) de plusieurs fois par semaine à une fois par mois maximum. Du coup, je mange notamment beaucoup plus de poulet et oeufs, qui semblent exercer une pression bien moindre sur l'environnement. Voir le tableau ci-contre. Il se trouve que cette décision a été plutôt facile à mettre en oeuvre, ce sont de (mauvaises) habitudes de consommation qu'on change finalement très facilement.
 </p>[Source du tableau sur Wikipédia](http://fr.wikipedia.org/wiki/Impact_environnemental_de_la_production_de_viande)
 
 #### Gare aux poissons ! 
