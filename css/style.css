@@ -93,6 +93,11 @@ h3 {
   color: #2b6991;
 }
 
+h4 {
+  font-weight: bold;
+  margin-bottom: .2em;
+}
+
 a {
   text-decoration: none;
   color: #2b6991;
@@ -110,6 +115,16 @@ cite {
   font-size: .8em;
   color: #666;
 }
+
+.center-it{
+  text-align: center;  
+}
+
+.image-right{
+  float: right;
+  padding-left: 1em;
+}
+  
 
 /* =Header
 -------------------------------------------------------------- */
