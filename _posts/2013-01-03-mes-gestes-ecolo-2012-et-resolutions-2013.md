@@ -71,6 +71,8 @@ A l'occasion de mon déménagement, et aussi un petit peu tous les jours, je me 
 
 * *Consolider* Toute la liste ci-dessus est à reconduire - je ne regrette rien, bien au contraire. Je vise notamment le zéro avion en 2013 !
 
+* *Efficacité énergétique* [Le logement représente 30% du bilan carbone d'un ménage français](http://www.ecocopro.com/2011/10/02/le-bilan-carbone-des-francaisla-part-du-logement/), et chez nous on se chauffe avec de vieux radiateurs électriques pas efficients du tout… C'est assez compliqué parce que ce sont des investissements non négligeables et que je ne suis pas propriétaire, mais il va falloir des efforts là-dessus&nbsp;! Je rêve d'une petite maison avec des murs épais et un poêle à bois, mais on en est pas là…
+
 * *Trouver une activité professionnelle en rapport* le plus direct possible avec toutes ces bonnes résolutions… Pas le moindre des challenges.
 
 * *Plus de solidaire.* Il m'est clairement apparu que la conscience environnementale était étroitement liée à la conscience sociale et solidaire : je compte aller plus loin dans ces domaines.
