@@ -78,3 +78,5 @@ A l'occasion de mon déménagement, et aussi un petit peu tous les jours, je me 
 * *Plus de solidaire.* Il m'est clairement apparu que la conscience environnementale était étroitement liée à la conscience sociale et solidaire : je compte aller plus loin dans ces domaines.
 
 * *Convaincre.* Sans connaitre exactement les moyens, je compte essayer de convaincre un maximum de gens du bien fondé de mes actions - parce que tout seul c'est bien mais ce n'est pas suffisant ! J'ai modestement commencé avec deux communautés Google+ : [Technologie solidaire et écologique](https://plus.google.com/communities/104667055874769450646) et [Co Révolution](https://plus.google.com/communities/113380020528181489648), cette dernière étant directement [inspirée du travail de SoAnn](http://www.scoop.it/t/corevolution).
+
+Dites… J'en fais trop ?
