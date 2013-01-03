@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mes gestes écolo 2012 et résolutions 2013
-baseline: Pour faire dans l'original, l'heure est au bilan et aux prospectives. L'occasion pour moi de revenir sur les efforts que j'ai essayés de faire pour l'environnement en 2012 et ceux que je projette en 2013.
+baseline: Pour faire dans l'original, l'heure est au bilan et aux prospectives. L'occasion pour moi de revenir sur les efforts que j'ai essayés de faire pour l'environnement en 2012 et ceux que je projette en 2013. Un bon cru quand on y repense !
 tags: [durable, écolo]
 ---
 
