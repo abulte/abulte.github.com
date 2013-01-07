@@ -149,11 +149,10 @@ header div {
   padding: .2em 0 .4em;
   display: block;
   float: left;
-  background-image: url('http://www.gravatar.com/avatar/fde6f8b5ab97772e0aa35f0a0fc79a2d.png');
+  background-image: url('/img/train.png');
   background-position: left;
   background-repeat: no-repeat;
-  padding-left: 80px;
-  background-size: 15%;
+  padding-left: 60px;
 }
 
 header a {
