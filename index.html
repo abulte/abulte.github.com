@@ -5,13 +5,8 @@ title: Alexandre Bulté
 
 <div id="home">
 
-<!-- 	<div id="intro">
-		{% include home.html %}
-	</div> -->
-
 	<div id="featured">
-<!-- 		<h3>Latest</h3>
- -->
+
 		{% for post in site.posts offset: 0 limit: site.theme.homepage_featured %}
 			{% include post_featured.html %}
             <div class="separator">~</div>
@@ -28,4 +23,7 @@ title: Alexandre Bulté
 		</dl>
 		<p><a href="/archive.html" class="more">Voir tous les articles »</a></p>
 	</div>
+
 </div>
+
+{% include author.html %}

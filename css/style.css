@@ -272,6 +272,11 @@ footer  {
   padding-bottom: .7em;
 }
 
+
+/* =Author block
+-------------------------------------------------------------- */
+
+
 #author {
     font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
     background: none repeat scroll 0 0 #FCFCFC;
@@ -281,6 +286,7 @@ footer  {
     line-height: 1.62em;
     margin-bottom: 20px;
     padding: 20px;
+    clear: both;
 }
 
 #author .avatar{
