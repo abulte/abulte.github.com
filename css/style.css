@@ -116,6 +116,10 @@ cite {
   color: #666;
 }
 
+
+/* =Helpers
+-------------------------------------------------------------- */
+
 .center-it{
   text-align: center;  
 }
@@ -123,6 +127,10 @@ cite {
 .image-right{
   float: right;
   padding-left: 1em;
+}
+
+.strong{
+  font-weight: bold;
 }
   
 
@@ -262,6 +270,44 @@ footer  {
 #posts dd {
   margin-bottom: .7em;
   padding-bottom: .7em;
+}
+
+#author {
+    font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+    background: none repeat scroll 0 0 #FCFCFC;
+    border-bottom: 1px solid #EEEEEE;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    line-height: 1.62em;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#author .avatar{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #DDDDDD;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    float: left;
+    padding: 5px;
+}
+
+#author > div{
+    margin-left: 120px;
+}
+
+#author .social{
+    background-size: auto 25px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding-left: 35px;
+}
+
+#author .twitter{
+    background-image: url('/img/twitter.png');
+}
+
+#author .googleplus{
+    background-image: url('/img/googleplus.png');
 }
 
 /* =Home
