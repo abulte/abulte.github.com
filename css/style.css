@@ -98,6 +98,11 @@ h4 {
   margin-bottom: .2em;
 }
 
+h5 {
+  font-style: italic;
+  margin-bottom: .1em;
+}
+
 a {
   text-decoration: none;
   color: #2b6991;
@@ -114,6 +119,51 @@ cite {
   margin-left: 1.9em;
   font-size: .8em;
   color: #666;
+}
+
+/* =Code (github)
+-------------------------------------------------------------- */
+
+pre,code{
+    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+}
+
+pre {
+    margin-bottom: 15px;
+    background-color:#eee;
+    border:1px solid #ddd;
+    padding:5px;
+    line-height:1em;
+    color:#444;
+    overflow:auto;
+    -webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+    font-size: 0.8em;
+    padding:0;
+    background-color:#eee;
+    border:none;
+}
+code {
+    font-size: 12px;
+    background-color:#f8f8ff;
+    color:#444;
+    padding:0 .2em;
+    border:1px solid #dedede;
+}
+
+/* =Gists
+-------------------------------------------------------------- */
+
+.gist {
+  font: normal normal normal .6em Arial, DejaVuSansMono, Consolas, monospace;
+  margin-bottom: 1em;
+}
+
+.gist {
+  font-size: 1em;
 }
 
 
@@ -349,18 +399,6 @@ footer  {
   font-size: 2.5em;
   bottom: -.7em;
   right: .2em;
-}
-
-/* =Gists
--------------------------------------------------------------- */
-
-.gist, pre {
-  font: normal normal normal .6em Arial, DejaVuSansMono, Consolas, monospace;
-  margin-bottom: 1em;
-}
-
-.gist  pre {
-  font-size: 1em;
 }
 
 /* =Responsive

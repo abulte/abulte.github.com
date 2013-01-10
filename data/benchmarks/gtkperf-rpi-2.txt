@@ -1,0 +1,38 @@
+GtkPerf 0.40 - Starting testing: Thu Jan 10 11:44:55 2013
+
+GtkEntry - time:  0.75
+GtkComboBox - time: 10.18
+GtkComboBoxEntry - time:  5.72
+GtkSpinButton - time:  1.05
+GtkProgressBar - time:  0.72
+GtkToggleButton - time:  1.12
+GtkCheckButton - time:  1.03
+GtkRadioButton - time:  2.00
+GtkTextView - Add text - time:  9.37
+GtkTextView - Scroll - time:  2.49
+GtkDrawingArea - Lines - time: 22.33
+GtkDrawingArea - Circles - time: 30.17
+GtkDrawingArea - Text - time: 17.45
+GtkDrawingArea - Pixbufs - time:  1.73
+ --- 
+Total time: 106.25
+
+GtkPerf 0.40 - Starting testing: Thu Jan 10 11:47:27 2013
+
+GtkEntry - time:  0.72
+GtkComboBox - time: 10.71
+GtkComboBoxEntry - time:  5.77
+GtkSpinButton - time:  1.07
+GtkProgressBar - time:  0.75
+GtkToggleButton - time:  1.19
+GtkCheckButton - time:  1.10
+GtkRadioButton - time:  2.08
+GtkTextView - Add text - time:  9.50
+GtkTextView - Scroll - time:  2.57
+GtkDrawingArea - Lines - time: 22.23
+GtkDrawingArea - Circles - time: 30.04
+GtkDrawingArea - Text - time: 17.50
+GtkDrawingArea - Pixbufs - time:  1.80
+ --- 
+Total time: 107.16
+
