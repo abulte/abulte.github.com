@@ -134,3 +134,17 @@ About the community: the Raspberry Pi community is *huge* and you can get some h
 
 Overall, the benchmarks confirmed my first impression and what you could expect from the specs (and even more): the Cubie is way faster than the Pi. For example, a graphical desktop feels usable on the Cubie. I'm starting to really like this little board but I have to put it through a reality test since I only had it for one day.
 
+### Review summary
+
+<p>
+  <div itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <span itemprop="name">Very good product!</span>
+    <meta itemprop="datePublished" content="2013-01-09">
+    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+      <meta itemprop="worstRating" content = "1"/>
+      <span itemprop="ratingValue">5</span>/<span itemprop="bestRating">5</span>
+    </div>
+    <span itemprop="description">Great powerful board for the value.</span>
+  </div>
+</p>
+
