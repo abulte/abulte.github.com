@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cubie Board quick look, compared to Raspberry Pi | cat @abulte > weblog</title>
+		<link rel='stylesheet'  href='/css/style.css' type='text/css' media='all' />
+		<link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+        <link rel="meta" type="application/rdf+xml" href="/foaf.rdf" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-34672109-2']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+
+	</head>
+	<body>
+		<header>
+			<div>
+                <p id="logo"><a href="/" title="cat @abulte > weblog">cat @abulte > weblog</a></p>
+				<nav>
+					<ul>
+						<li><a href="/archive.html" title="Archives">Archives</a></li>
+						<li><a href="/a-propos-alexandre-bulte.html" title="L'auteur">L'auteur</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<div id="content">
+		<div id="post">
+<h2>09 janvier 2013</h2>
+<h1>Cubie Board quick look, compared to Raspberry Pi</h1>
+<p class="baseline">I just got my hands on a new low-priced ARM board, similar to the über famous Rapsberry Pi : the Cubie Board. Let's see what's in the box, and how both boards compare.</p>
+
+<h3>What&#39;s a Cubie Board?</h3>
+
+<p>It&#39;s a small, low-priced ARM board (i.e. micro computer), aiming at delivering the most power for the price. From the <a href="http://cubieboard.org">official site</a>:</p>
+
+<blockquote>
+<ul>
+<li>1G ARM cortex-A8 processor, NEON, VFPv3, 256KB L2 cache</li>
+<li>Mali400, OpenGL ES GPU</li>
+<li>512M/1GB DDR3 @480MHz</li>
+<li>HDMI 1080p Output</li>
+<li>10/100M Ethernet</li>
+<li>4Gb Nand Flash</li>
+<li>2 USB Host, 1 micro SD slot, 1 SATA, 1 ir</li>
+<li>96 extend pin including I2C, SPI, RGB/LVDS, CSI/TS, FM-IN, ADC, CVBS, VGA, SPDIF-OUT, R-TP..</li>
+<li>Running Android, Ubuntu and other Linux distributions</li>
+</ul>
+</blockquote>
+
+<p>Price tag is 49$, you can order one on the official site. I got mine quite early by participating to the successful <a href="http://www.indiegogo.com/cubieboard">IndieGoGo crowd funding campaign</a>.</p>
+
+<p>I got mine with the following accessories:</p>
+
+<blockquote>
+<ul>
+<li>Minimalist acrylic case</li>
+<li>USB to power cable</li>
+<li>SATA cable</li>
+<li>USB to serial cable</li>
+</ul>
+</blockquote>
+
+<p>First impression: good enough packaging and nice accessories. Board looks sturdy except maybe for the power plug which is quite difficult to plug in and feels fragile. Someone made an unboxing video on Youtube (see below). I can confirm that the acrylic sheets protections are quite annoying to remove… But it&#39;s a one time thing.</p>
+
+<div class="center-it"><iframe width="560" height="315" src="http://www.youtube.com/embed/s2xGu6urECA" frameborder="0" allowfullscreen></iframe></div>
+
+<h3>Quick Raspberry Pi comparison</h3>
+
+<p>I&#39;m quite a fan of the <a href="http://www.raspberrypi.org">Raspberry Pi</a> (RPi), of which I own several copies. I recently received the very last model with 512MB of RAM. Let&#39;s look at the main differences between the two boards before running a quick benchmark.</p>
+
+<h4>Dimensions</h4>
+
+<p>Both boards are very small (remember, they are fully functionnal computers, you just need to plug-in a keyboard, mouse and screen), but the Cubie is a little larger. Below a picture with both boards, naked RPi on top and Cubie in its case on the bottom. You can see the scale by looking at the connectors on the RPi.</p>
+
+<div class="center-it"><img src="../img/rpi-cubie.jpg" /></div>
+
+<h4>Memory</h4>
+
+<p>CubieBoard comes with 1 GB RAM, whereas the latest RPi comes with half as much : 512 MB. Quite a big difference here.</p>
+
+<p>Also, CubieBoard comes with 4 GB NAND Flash (kind of an internal SSD drive). RPi comes with no internal Flash. Unfortunately, it seems that for the moment the internal CubieBoard Flash can not be used/filled without a Windows tool… I have to follow up on that.</p>
+
+<p>Both boards have an external memory card, standard SD for RPi and micro SD for Cubie. Quite similar here.</p>
+
+<h4>Connectivity</h4>
+
+<p><em>Network:</em> both boards sport an Ethernet 100M port. No wifi, but you can plug a tiny USB dongle if you need it.</p>
+
+<p><em>Video:</em> HDMI slot on both, plus a RCA out on the RPi. Never used it, probably never will, but useful if you want to plug it to a very old TV.</p>
+
+<p><em>Sound:</em> Of course HDMI can output sound, but you also get a Jack output on each board. There is also a line in on the Cubie.</p>
+
+<p><em>USB:</em> 2 ports on both boards. Cubie also has a micro USB female slot, but I don&#39;t know what it&#39;s for. Alternative power input?</p>
+
+<p><em>GPIO:</em> with both boards you can connect to the real world (e.g. with sensors) with GPIO connectivity.</p>
+
+<p><em>Cubie extra:</em> Regarding connectivity, Cubie comes with nice extra. An IR sensor (nice for remotes, especially when used as a media center) and most notably a SATA port. I think this is very nice, since it lets you plug easily and efficiently a big fat drive to your board.</p>
+
+<h4>Benchmark</h4>
+
+<p>I ran a few benchmarks to try to compare both board performances. I am no benchmark expert, so correct me if I&#39;ve done something terribly wrong. I know that benchmarks can be easily flawed, so take the usual precautions with the results…</p>
+
+<h5>Test conditions</h5>
+
+<p>I used the same SD card (I have a micro SD to SD adapter) and basic <a href="http://www.raspbian.org">Raspbian</a> install for both boards. This is made possible by the <a href="http://www.berryterminal.com/doku.php/berryboot">excellent BerryBoot</a>. I guess it&#39;s an advantage for the RPi though, since Raspbian has some RPi optimizations. I also used the same power block for both boards.</p>
+
+<h5>CPU</h5>
+
+<p>A few words about CPU: the RPi is powered by a ARM1176JZFS 700Mhz CPU. The Cubie sports a 1 GHz ARM cortex-A8. Presumably, the Cubie should be faster.</p>
+
+<p>I used <code>sysbench</code> with the following command line:</p>
+<div class="highlight"><pre><code class="text">$ sysbench --test=cpu run
+</code></pre>
+</div>
+
+<p><img class="center-it" src="../img/bench/cpu.png" /></p>
+
+<p>Judging by the total amount of time taken, on average, by the benchmark (less is better), Cubie appears twice as fast !</p>
+
+<p><a href="https://gist.github.com/4501576">Full results here, 2 tests per board.</a></p>
+
+<h5>Disk</h5>
+
+<p>I used <code>dbench</code> with the following command line:</p>
+<div class="highlight"><pre><code class="text">$ dbench 1
+</code></pre>
+</div>
+
+<p><img class="center-it" src="../img/bench/disk.png" /></p>
+
+<p>Cubie seems a little faster, but nothing too significant considering I only made 1 test per board.</p>
+
+<p><a href="https://gist.github.com/4501569">Full results here, 1 test per board.</a></p>
+
+<h5>Memory</h5>
+
+<p>I used <code>mbw</code> with the following command line:</p>
+<div class="highlight"><pre><code class="text">$ mbw 128
+</code></pre>
+</div>
+
+<p><img class="center-it" src="../img/bench/memory.png" /></p>
+
+<p>Unfortunately I don&#39;t really know how to interpret this (except that more is better), but the Cubie is beating hard the RPi in two categories (MCBLOCK, MEMCPY) while the last one (DUMB) is more of a tie but still with an advantage to the Cubie.</p>
+
+<p><a href="https://gist.github.com/4501580">Full results here, 2 tests per board.</a></p>
+
+<h5>GPU</h5>
+
+<p>I used <code>gtkperf</code> from X, with default values. </p>
+
+<p><img class="center-it" src="../img/bench/gtk.png" /></p>
+
+<p>Less is better. Once again, the Cubie is largely faster.</p>
+
+<p><a href="https://gist.github.com/4501589">Full results here, 2 tests per board.</a></p>
+
+<h3>My two cents</h3>
+
+<p>A word on pricing: the Cubie costs 49$ and you get somewhat of a power adapter (just the USB cable without the power block), a SATA cable and 4 GB of internal memory. You can also get the case for 4$. The Pi sells for 35$ (in the US) and you do not get anything more than the raw board.</p>
+
+<p>About the community: the Raspberry Pi community is <em>huge</em> and you can get some help, examples and tutorials everywhere. This is not true for the Cubie which is much more recent and is probably not suited for absolute beginners.</p>
+
+<p>Overall, the benchmarks confirmed my first impression and what you could expect from the specs (and even more): the Cubie is way faster than the Pi. For example, a graphical desktop feels usable on the Cubie. I&#39;m starting to really like this little board but I have to put it through a reality test since I only had it for one day.</p>
+
+
+<div id="author" itemscope itemtype="http://schema.org/Person">
+    <img alt="Alexandre Bulté avatar" class="avatar" src="http://www.gravatar.com/avatar/fde6f8b5ab97772e0aa35f0a0fc79a2d.png" itemprop="image" />
+    <div>
+        Écrit par <span class="strong" itemprop="name">Alexandre Bulté</span>
+    </div>
+    <div class="social twitter">
+        Suivez-moi sur <a href="https://twitter.com/abulte">Twitter</a>
+    </div>
+    <div class="social googleplus">
+        Rejoignez-moi sur <a href="https://plus.google.com/110826034342222404990?rel=author">Google+</a>
+    </div>
+</div>
+
+
+
+	<div id="posts">
+		<h3>Voir aussi...</h3>
+
+		
+			<dt>03 Jan 2013</dt>
+<dd><a href="/01-03-2013/mes-gestes-ecolo-2012-et-resolutions-2013.html">Mes gestes écolo 2012 et résolutions 2013</a></dd>
+		
+			<dt>30 Nov 2012</dt>
+<dd><a href="/11-30-2012/catsignal-mobilisation-internet.html">Mobilisation pour l'internet libre</a></dd>
+		
+			<dt>09 Nov 2012</dt>
+<dd><a href="/11-09-2012/blog-statique-fin-cms.html">Mon blog est statique !</a></dd>
+		
+	</div>
+
+
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bulte';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<footer>
+			<p>Turned into a monster by <a href="http://jekyllrb.com">Jekyll</a>, theme inspired by <a href="http://stephan83.github.com">Stephan Florquin</a></p>
+            <a href="http://internetdefenseleague.org"><img src="http://internetdefenseleague.org/images/badges/final/footer_badge.png" alt="Member of The Internet Defense League" /></a>
+		</footer>
+
+		<div id="github_ribbon"><a href="https://github.com/abulte/abulte.github.com"><img style="position: fixed; top: 0; left: 0; border: 0; z-index: 32001;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a></div>
+
+        <!-- http://members.internetdefenseleague.org -->
+        <script type="text/javascript">
+            window._idl = {};
+            _idl.variant = "modal";
+            (function() {
+                var idl = document.createElement('script');
+                idl.type = 'text/javascript';
+                idl.async = true;
+                idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
+                document.getElementsByTagName('body')[0].appendChild(idl);
+            })();
+        </script>
+
+	</body>
+
+</html>

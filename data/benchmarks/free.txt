@@ -1,0 +1,6 @@
+             total       used       free     shared    buffers     cached
+Mem:           815        127        688          0         44         60
+-/+ buffers/cache:         21        793
+Swap:            0          0          0
+
+apt-get install php5-curl php-fpdf

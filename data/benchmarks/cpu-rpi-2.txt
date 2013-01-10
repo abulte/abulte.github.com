@@ -1,0 +1,27 @@
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 10000
+
+
+Test execution summary:
+    total time:                          506.6683s
+    total number of events:              10000
+    total time taken by event execution: 506.6226
+    per-request statistics:
+         min:                                 50.30ms
+         avg:                                 50.66ms
+         max:                                254.64ms
+         approx.  95 percentile:              51.64ms
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   506.6226/0.00
+
