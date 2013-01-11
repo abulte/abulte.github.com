@@ -5,7 +5,9 @@ theme:
 
   # Site name
   site_name: cat @abulte > weblog
-  alt_tile: Blog d'Alexandre Bulté
+
+  # Alt site name
+  site_name_alt: Blog d'Alexandre Bulté
 
   # Google analytics UID
   google_analytics_uid: UA-34672109-2
