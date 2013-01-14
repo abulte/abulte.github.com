@@ -1,26 +1,29 @@
 ---
-layout: default_article
+layout: default
 ---
 
-<div id="post">
-<h2>{{ page.date | localize: "%d %B %Y" }}</h2>
-<h1>{{ page.title }}</h1>
-<p class="baseline">{{ page.baseline }}</p>
+<div id="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h2 itemprop="datePublished">{{ page.date | localize: "%d %B %Y" }}</h2>
+    <h1 itemprop="name headline">{{ page.title }}</h1>
+    <p itemprop="description" class="baseline">{{ page.baseline }}</p>
 
-{{ content }}
+    <div itemprop="articleBody">
+        {{ content }}
+    </div>
 
-{% include author.html %}
+    {% include author.html %}
+    {% include hidden_schema.html %}
 
-{{ if site.related_posts }}
-	<div id="posts">
-		<h3>Voir aussi...</h3>
+    {{ if site.related_posts }}
+    	<div id="posts">
+    		<h3>Voir aussi...</h3>
 
-		{% for post in site.related_posts %}
-			{% include post_summary.html %}
-		{% endfor %}
-	</div>
+    		{% for post in site.related_posts %}
+    			{% include post_summary.html %}
+    		{% endfor %}
+    	</div>
 
-{{ endif }}
+    {{ endif }}
 
 </div>
 

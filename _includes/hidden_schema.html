@@ -1,0 +1,6 @@
+<span class="hide-it" itemprop="inLanguage">
+    {% if page.language %}{{ page.language }}{% else %}fr{% endif %}
+</span>
+<span class="hide-it" itemprop="keywords">
+    {% for tag in page.tags %}{{ tag }}{% if forloop.last == false %},{% endif %}{% endfor %}
+</span>
