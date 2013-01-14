@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
-                  article: http://ogp.me/ns/article#">
-        <meta property="og:type"                 content="article"> 
-        <meta property="og:url"                  content="/11-09-2012/blog-statique-fin-cms.html">
-        <meta property="og:site_name"            content="Blog d'Alexandre Bulté">
-        <meta property="og:title"                content="Mon blog est statique !">
-        <meta property="og:description"          content="Genèse et recette de ce blog basé sur Jekyll. Et un nouveau souffle pour la gestion de contenu ?"> 
-        <meta property="article:published_time"  content="Fri Nov 09 00:00:00 +0100 2012"> 
-        <meta property="article:author"          content="https://plus.google.com/110826034342222404990?rel=author">
-        <meta property="article:tag"             content="github,jekyll,web">
-
+    <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mon blog est statique ! | cat @abulte > weblog</title>
@@ -49,12 +39,13 @@
         </header>
 
         <div id="content">
-        <div id="post">
-<h2>09 novembre 2012</h2>
-<h1>Mon blog est statique !</h1>
-<p class="baseline">Genèse et recette de ce blog basé sur Jekyll. Et un nouveau souffle pour la gestion de contenu ?</p>
+        <div id="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h2 itemprop="datePublished">09 novembre 2012</h2>
+    <h1 itemprop="name headline">Mon blog est statique !</h1>
+    <p itemprop="description" class="baseline">Genèse et recette de ce blog basé sur Jekyll. Et un nouveau souffle pour la gestion de contenu ?</p>
 
-<p>Après des années passées à intégrer, vendre, hacker, encenser et haïr des CMS &quot;classiques&quot;, j&#39;ai voulu explorer une autre voie. Avec le recul, tout CMS - aussi léger (qui a dit <em>WordPress</em> ?) ou complet (qui a dit <em>Drupal</em> ?) soit-il censé être - me paraît en effet bien triste/lent/complexe par rapport à mon pauvre besoin de quelques articles par mois (en pointe)…</p>
+    <div itemprop="articleBody">
+        <p>Après des années passées à intégrer, vendre, hacker, encenser et haïr des CMS &quot;classiques&quot;, j&#39;ai voulu explorer une autre voie. Avec le recul, tout CMS - aussi léger (qui a dit <em>WordPress</em> ?) ou complet (qui a dit <em>Drupal</em> ?) soit-il censé être - me paraît en effet bien triste/lent/complexe par rapport à mon pauvre besoin de quelques articles par mois (en pointe)…</p>
 
 <h3>La quête</h3>
 
@@ -104,8 +95,9 @@
 
 <p>Une alternative à Jekyll en Python : Pelican <a href="https://github.com/getpelican/pelican/">https://github.com/getpelican/pelican/</a>.</p>
 
+    </div>
 
-<div id="author" itemscope itemtype="http://schema.org/Person">
+    <div id="author" itemscope itemtype="http://schema.org/Person">
     <img alt="Alexandre Bulté avatar" class="avatar" src="http://www.gravatar.com/avatar/fde6f8b5ab97772e0aa35f0a0fc79a2d.png" itemprop="image" />
     <div>
         Écrit par <span class="strong" itemprop="name">Alexandre Bulté</span>
@@ -118,24 +110,31 @@
     </div>
 </div>
 
+    <span class="hide-it" itemprop="inLanguage">
+    fr
+</span>
+<span class="hide-it" itemprop="keywords">
+    github,jekyll,web
+</span>
 
 
-	<div id="posts">
-		<h3>Voir aussi...</h3>
+    
+    	<div id="posts">
+    		<h3>Voir aussi...</h3>
 
-		
-			<dt>09 Jan 2013</dt>
+    		
+    			<dt>09 Jan 2013</dt>
 <dd><a href="/01-09-2013/cubie-board-quick-look-raspberry-pi-comparison.html">Cubie Board quick look, compared to Raspberry Pi</a></dd>
-		
-			<dt>03 Jan 2013</dt>
+    		
+    			<dt>03 Jan 2013</dt>
 <dd><a href="/01-03-2013/mes-gestes-ecolo-2012-et-resolutions-2013.html">Mes gestes écolo 2012 et résolutions 2013</a></dd>
-		
-			<dt>30 Nov 2012</dt>
+    		
+    			<dt>30 Nov 2012</dt>
 <dd><a href="/11-30-2012/catsignal-mobilisation-internet.html">Mobilisation pour l'internet libre</a></dd>
-		
-	</div>
+    		
+    	</div>
 
-
+    
 
 </div>
 

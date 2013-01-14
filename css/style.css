@@ -170,6 +170,10 @@ code {
 /* =Helpers
 -------------------------------------------------------------- */
 
+.hide-it{
+  visibility: hidden;  
+}
+
 .center-it{
   text-align: center;  
 }
