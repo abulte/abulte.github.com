@@ -111,9 +111,13 @@ section {
 body {
   line-height: 1;
 }
+ol.no-bullet,
+ul.no-bullet {
+  list-style: none;
+}
 ol,
 ul {
-  list-style: none;
+  padding-left: 50px;
 }
 blockquote,
 q {
