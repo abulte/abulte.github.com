@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mobilisation pour l'internet libre | cat @abulte > weblog</title>
+        <title>RSS notification workflow on Mac OS Mountain Lion | cat @abulte > weblog</title>
         <link rel='stylesheet'  href='/css/style.css' type='text/css' media='all' />
         <link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
         <!--[if lt IE 9]>
@@ -40,22 +40,35 @@
 
         <div id="content">
         <div id="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <h2 itemprop="datePublished">30 novembre 2012</h2>
-    <h1 itemprop="name headline">Mobilisation pour l'internet libre</h1>
-    <p itemprop="description" class="baseline">Quelques mots sur la ligue de défense de l'Internet, une initiative citoyenne que je soutiens sur ce blog.</p>
+    <h2 itemprop="datePublished">12 février 2013</h2>
+    <h1 itemprop="name headline">RSS notification workflow on Mac OS Mountain Lion</h1>
+    <p itemprop="description" class="baseline">I'm using Twitter and IFTT to display notifications in Mountain Lion of new items from my favorite sites.</p>
 
     <div itemprop="articleBody">
-        <h3>The Internet Defense League</h3>
+        <h3>Use case</h3>
 
-<p><a href="http://internetdefenseleague.org">La ligue de défense de l&#39;Internet</a> est une initiative citoyenne visant à mobiliser un maximum d&#39;internautes lorsque que des atteintes à la liberté sur Internet menacent. Le mouvement est né dans la foulée des contestations relatives au <a href="http://fr.wikipedia.org/wiki/Stop_Online_Piracy_Act">projet de loi SOPA</a> fin 2011 / début 2012.</p>
+<p>I was looking for a way to be notified - almost instantly and with some kind of reading queue - of new items published on my favorite sites. It could not be via email since I hate piling up emails: it makes me feel over with TODO stuff since I use my Inbox GTD-style.</p>
 
-<p>L&#39;objectif du réseau est d&#39;être capable, lors d&#39;actions de protestations choisies et ciblées, de mobiliser rapidement et manière simultanée un maximum de &quot;présences web&quot;, autrement dit des messages avertissant du danger sur un maximum de sites et réseaux sociaux. Concrètement, sur ce site, à chaque déclenchement de campagne par le collectif, une pop-in s&#39;affichera avec le message en question. Notons qu&#39;il est bien sûr possible de choisir les actions qu&#39;on soutient au cas par cas.</p>
+<h3>My solution</h3>
 
-<p><em>Une nouvelle action est prévue le 3 décembre 2012</em> en réaction à une réunion de l&#39;<a href="http://en.wikipedia.org/wiki/International_Telecommunication_Union">ITU</a> visant à débattre du contrôle de l&#39;Internet par les gouvernements des Nations Unies. Ce genre d&#39;initiative a tendance à aller à l&#39;encontre du caractère fondamentalement <em>ouvert</em> et <em>libre</em> de l&#39;Internet depuis ses débuts. <a href="http://standblog.org/blog/post/2012/11/30/regulation-d-Internet-par-les-Etats">Tristan Nitot en parle mieux que moi sur son blog</a>.</p>
+<p>I assembled tools I already had/knew to fulfill my need:</p>
 
-<p>Si vous voulez participer et/ou en savoir plus <a href="http://www.internetcoup.org/fr/">rendez-vous sur le site dédié à l&#39;opération</a>. Vous y trouverez notamment une vidéo explicative avec des sous-titres français.</p>
+<ul>
+<li>Get the RSS feed URL for your favorite websites (for example Hacker News): <a href="http://news.ycombinator.com/rss">http://news.ycombinator.com/rss</a></li>
+<li>Use this feed as an input in <a href="https://ifttt.com">IFTT</a>. IFTT is a great free online service that lets you connect parts of the Internet, based on conditions you define. If you don&#39;t know it, you should definitely check it out.</li>
+<li>Create a dedicated Twitter account for my notifications as I don&#39;t want my primary account to be &quot;spammed&quot;.</li>
+<li>Use this twitter account as the output in IFTT : I send a tweet to my notification account each time a new item is published in the RSS feed.</li>
+<li>Use official Twitter client in MacOS, add the notification account and set notifications for new messages on this account to &quot;Growl&quot;.</li>
+<li>Use the free app <a href="http://collect3.com.au/hiss/">Hiss</a> to convert Growl notifications to Mountain Lion notification center ones.</li>
+</ul>
 
-<p>Vous remarquerez également la superbe tête de chat rouge qui orne le pied de page de ce site en signe de ma participation au collectif ;-).</p>
+<p>And that&#39;s it ! Now each time a new item (refreshed every 15 minutes) is published on Hacker News, I get a notification on my desktop and the item is queued up (up to 20 items) in my notification center.</p>
+
+<p>Alternatively, I tried for a while to send every new item to my Readability account, but I ended up filling it with unread items and I needed a server to run the cron: not ideal.</p>
+
+<p>With this solution I have one limitation at the moment: if I restart the Twitter app, Hiss re-sends every notifications from the beginning... But I hardly ever restart it.</p>
+
+<p>Do you have a better workflow? </p>
 
     </div>
 
@@ -73,10 +86,10 @@
 </div>
 
     <span class="hide-it" itemprop="inLanguage">
-    fr
+    en
 </span>
 <span class="hide-it" itemprop="keywords">
-    web,freedom
+    productivity
 </span>
 
 
@@ -85,14 +98,14 @@
     		<h3>Voir aussi...</h3>
 
     		
-    			<dt>12 Feb 2013</dt>
-<dd><a href="/02-12-2013/mac-os-rss-ifttt-notification-workflow.html">RSS notification workflow on Mac OS Mountain Lion</a></dd>
-    		
     			<dt>09 Jan 2013</dt>
 <dd><a href="/01-09-2013/cubie-board-quick-look-raspberry-pi-comparison.html">Cubie Board quick look, compared to Raspberry Pi</a></dd>
     		
     			<dt>03 Jan 2013</dt>
 <dd><a href="/01-03-2013/mes-gestes-ecolo-2012-et-resolutions-2013.html">Mes gestes écolo 2012 et résolutions 2013</a></dd>
+    		
+    			<dt>30 Nov 2012</dt>
+<dd><a href="/11-30-2012/catsignal-mobilisation-internet.html">Mobilisation pour l'internet libre</a></dd>
     		
     			<dt>09 Nov 2012</dt>
 <dd><a href="/11-09-2012/blog-statique-fin-cms.html">Mon blog est statique !</a></dd>
