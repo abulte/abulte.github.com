@@ -29,3 +29,5 @@ Alternatively, I tried for a while to send every new item to my Readability acco
 With this solution I have one limitation at the moment: if I restart the Twitter app, Hiss re-sends every notifications from the beginning... But I hardly ever restart it.
 
 Do you have a better workflow? 
+
+EDIT I found this free app on the App Store, which does the same from your Google Reader account: http://www.rockysandstudio.com/apps/reader-notifier.
