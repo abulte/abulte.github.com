@@ -6,6 +6,7 @@
         <title>Mon blog est statique ! | cat @abulte > weblog</title>
         <link rel='stylesheet'  href='/css/style.css' type='text/css' media='all' />
         <link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -38,8 +39,26 @@
             </div>
         </header>
 
-        <div id="content">
-        <div id="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div id="container">
+            <div id="vertical_nav">
+                <div class="center-it">
+    <a href="/"><img src="/img/abeille_rond_bleu.png"></a>
+</div>
+<div class="nav-content center-it">
+    <p class="title">
+        Blog <span>d'Alexandre</span>Bulté
+    </p>
+    <p class="tag_cloud">
+        <a href="/tag/arm.html" class="set-1">arm</a> <a href="/tag/durable.html" class="set-1">durable</a> <a href="/tag/freedom.html" class="set-1">freedom</a> <a href="/tag/github.html" class="set-1">github</a> <a href="/tag/jekyll.html" class="set-1">jekyll</a> <a href="/tag/linux.html" class="set-1">linux</a> <a href="/tag/productivity.html" class="set-1">productivity</a> <a href="/tag/web.html" class="set-5">web</a> <a href="/tag/%C3%A9colo.html" class="set-1">écolo</a>
+    </p>
+    <ul>
+        <li><a class="flat-button" href="/a-propos-alexandre-bulte.html">A propos de l'auteur</a></li>
+        <li><a class="flat-button" href="/archive.html">Archives</a></li>
+    </ul>
+</div>
+            </div>
+            <div id="content">
+            <div id="post" itemscope itemtype="http://schema.org/BlogPosting">
     <h2 itemprop="datePublished">09 novembre 2012</h2>
     <h1 itemprop="name headline">Mon blog est statique !</h1>
     <p itemprop="description" class="baseline">Genèse et recette de ce blog basé sur Jekyll. Et un nouveau souffle pour la gestion de contenu ?</p>
@@ -118,27 +137,6 @@
 </span>
 
 
-    
-    	<div id="posts">
-    		<h3>Voir aussi...</h3>
-
-    		
-    			<dt>12 Feb 2013</dt>
-<dd><a href="/02-12-2013/mac-os-rss-ifttt-notification-workflow.html">RSS notification workflow on Mac OS Mountain Lion</a></dd>
-    		
-    			<dt>09 Jan 2013</dt>
-<dd><a href="/01-09-2013/cubie-board-quick-look-raspberry-pi-comparison.html">Cubie Board quick look, compared to Raspberry Pi</a></dd>
-    		
-    			<dt>03 Jan 2013</dt>
-<dd><a href="/01-03-2013/mes-gestes-ecolo-2012-et-resolutions-2013.html">Mes gestes écolo 2012 et résolutions 2013</a></dd>
-    		
-    			<dt>30 Nov 2012</dt>
-<dd><a href="/11-30-2012/catsignal-mobilisation-internet.html">Mobilisation pour l'internet libre</a></dd>
-    		
-    	</div>
-
-    
-
 </div>
 
 <div id="disqus_thread"></div>
@@ -154,6 +152,7 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
+            </div>
         </div>
 
         <footer>
@@ -161,7 +160,7 @@
             <a href="http://internetdefenseleague.org"><img src="http://internetdefenseleague.org/images/badges/final/footer_badge.png" alt="Member of The Internet Defense League" /></a>
         </footer>
 
-        <div id="github_ribbon"><a href="https://github.com/abulte/abulte.github.com"><img style="position: fixed; top: 0; left: 0; border: 0; z-index: 32001;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a></div>
+        <div id="github_ribbon"><a href="https://github.com/abulte/abulte.github.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a></div>
 
         <!-- http://members.internetdefenseleague.org -->
         <script type="text/javascript">

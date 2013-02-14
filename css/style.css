@@ -114,6 +114,7 @@ body {
 ol.no-bullet,
 ul.no-bullet {
   list-style: none;
+  padding-left: 0px;
 }
 ol,
 ul {
@@ -153,7 +154,7 @@ body {
   line-height: 1.5em;
 }
 h1 {
-  font-size: 1.9em;
+  font-size: 1.8em;
   text-decoration: none;
   color: #0c84e8;
   line-height: 1.2em;
@@ -254,6 +255,7 @@ code {
 /* =Header
 -------------------------------------------------------------- */
 header {
+  visibility: hidden;
   background: #0c84e8;
   color: #fff;
   position: fixed;
@@ -263,7 +265,7 @@ header {
   z-index: 32000;
 }
 header div {
-  max-width: 750px;
+  max-width: 900px;
   margin: 0 auto;
 }
 #logo a {
@@ -297,7 +299,7 @@ header nav a:hover {
 /* =Footer
 -------------------------------------------------------------- */
 footer {
-  max-width: 750px;
+  max-width: 900px;
   margin: 0 auto;
   font-size: .7em;
   font-style: italic;
@@ -306,12 +308,60 @@ footer {
   padding: .3em 0;
   clear: both;
 }
+/* =Vertical nav
+-------------------------------------------------------------- */
+#vertical_nav {
+  padding: 20px;
+  width: 200px;
+  float: left;
+}
+.nav-content {
+  padding-top: 20px;
+}
+.nav-content p {
+  padding: 5px;
+}
+div.nav-content p.title {
+  font-family: Telex;
+  font-size: 1.8em;
+  color: #555555;
+  line-height: 1em;
+}
+div.nav-content p.title span {
+  display: block;
+  color: #222;
+}
+p.tag_cloud {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.tag_cloud a {
+  color: #0c84e8;
+}
+.tag_cloud a:hover {
+  color: #53acf6;
+}
+div.nav-content ul {
+  padding-left: 0;
+}
+div.nav-content li {
+  list-style-type: none;
+  padding: 5px;
+}
+/* =Container
+-------------------------------------------------------------- */
+#container {
+  width: 100%;
+  float: left;
+  margin-right: -150px;
+}
 /* =Content
 -------------------------------------------------------------- */
 #content {
-  max-width: 750px;
-  padding: 0 40px;
-  margin: 5em auto 3em;
+  border-left: dashed #0c84e8 1px;
+  max-width: 900px;
+  padding: 20px 40px;
+  margin-left: 240px;
   text-align: justify;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -330,7 +380,7 @@ footer {
   list-style-type: decimal;
   padding-left: 2em;
 }
-#content a:hover {
+a:hover {
   color: #0c84e8;
 }
 .baseline {
@@ -352,9 +402,6 @@ footer {
 }
 /* =Featured
 -------------------------------------------------------------- */
-#featured {
-  clear: both;
-}
 #featured article {
   margin-bottom: 1em;
 }
@@ -379,7 +426,6 @@ footer {
   line-height: 1.62em;
   margin-bottom: 20px;
   padding: 20px;
-  clear: both;
 }
 #author .avatar {
   background: none repeat scroll 0 0 #FFFFFF;
@@ -410,15 +456,6 @@ footer {
   background: url(/imgs/gears.png) no-repeat 0 20px;
 }
 */
-#home #posts {
-  width: 240px;
-  float: left;
-}
-#home #intro {
-  width: 240px;
-  float: right;
-  margin-bottom: 1.4em;
-}
 /* =Quotes
 -------------------------------------------------------------- */
 .open {
@@ -434,7 +471,7 @@ footer {
 /* =Responsive
 -------------------------------------------------------------- */
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width: 320px) and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   #github_ribbon {
     visibility: hidden;
   }
@@ -448,6 +485,13 @@ footer {
     background-repeat: no-repeat;
     background-size: 15%;
   }
+  header {
+    visibility: visible;
+  }
+  #vertical_nav {
+    display: none;
+    padding: 0;
+  }
   header nav {
     display: block;
     font-size: 0.8em;
@@ -456,14 +500,20 @@ footer {
     text-transform: uppercase;
     font-size: .9em;
     display: block;
-    /*padding: .2em .2em .4em;*/
-  
     padding: 0 0.2em 0 0.2em;
   }
   h1 {
-    font-size: 2em;
+    font-size: 1.2em;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  .baseline {
+    font-size: 1em;
   }
   #content {
+    font-size: 0.9em;
+    line-height: 1.4em;
     max-width: 780px;
     padding: 0 10px;
     margin: 2em auto 3em;
@@ -472,4 +522,68 @@ footer {
     -moz-hyphens: auto;
     hyphens: auto;
   }
+  ol,
+  ul {
+    padding-left: 15px;
+  }
+  #author > div {
+    margin-left: 0px;
+  }
+}
+/* =Button
+http://www.cssbutton.me/calebogden/4fdaf1803f2df0b712000003
+-------------------------------------------------------------- */
+.flat-button {
+  border-radius: 12px;
+  background: #0c84e8;
+  color: #FFF;
+  line-height: 40px;
+  width: 180px;
+  display: inline-block;
+  font-size: 16px;
+}
+.flat-button:hover {
+  color: #FFF;
+  background: #53acf6;
+}
+.button {
+  background-color: #127fd2;
+  background-image: -webkit-linear-gradient(top, #36a8ea 0%, #127fd2 100%);
+  background-image: -moz-linear-gradient(top, #36a8ea 0%, #127fd2 100%);
+  background-image: -ms-linear-gradient(top, #36a8ea 0%, #127fd2 100%);
+  background-image: -o-linear-gradient(top, #36a8ea 0%, #127fd2 100%);
+  background-image: linear-gradient(top, #36a8ea 0%, #127fd2 100%);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.4) inset, 1px 0px 0px 0px rgba(255, 255, 255, 0.4) inset, -1px 0px 0px 0px rgba(255, 255, 255, 0.4) inset;
+  -moz-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.4) inset, 1px 0px 0px 0px rgba(255, 255, 255, 0.4) inset, -1px 0px 0px 0px rgba(255, 255, 255, 0.4) inset;
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.4) inset, 1px 0px 0px 0px rgba(255, 255, 255, 0.4) inset, -1px 0px 0px 0px rgba(255, 255, 255, 0.4) inset;
+  border: solid 1px #035ea3;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  width: 180px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+.button:hover {
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+  background-image: -moz-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+  background-image: -ms-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+  background-image: -o-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+  background-image: linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.4) inset, 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+  -moz-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.4) inset, 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.4) inset, 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+  border: solid 1px #003481;
+}
+.button:active {
+  background-image: none;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 61, 127, 0.4) inset, 0px 0px 2px 2px rgba(0, 60, 125, 0.2) inset;
+  -moz-box-shadow: 0px 0px 8px 2px rgba(0, 61, 127, 0.4) inset, 0px 0px 2px 2px rgba(0, 60, 125, 0.2) inset;
+  box-shadow: 0px 0px 8px 2px rgba(0, 61, 127, 0.4) inset, 0px 0px 2px 2px rgba(0, 60, 125, 0.2) inset;
+  border: solid 1px #004683;
 }

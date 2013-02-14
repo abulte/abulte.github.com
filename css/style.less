@@ -7,7 +7,8 @@
 @colorLinkHover:        @colorTitle;
 @colorHeaderBottom:     #0C84E8;
 @colorDate:             #555;
-@maxWidth:              750px;
+@maxWidth:              900px;
+@colorLinkLight:        #53acf6;
 
 
 /* =Reset
@@ -46,8 +47,10 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
 }
+
 ol.no-bullet, ul.no-bullet {
   list-style: none;
+  padding-left: 0px;
 }
 
 ol, ul{
@@ -91,7 +94,7 @@ body {
 }
 
 h1 {
-  font-size: 1.9em;
+  font-size: 1.8em;
   text-decoration: none;
   color: @colorTitle;
   line-height: 1.2em;
@@ -213,6 +216,7 @@ code {
 -------------------------------------------------------------- */
 
 header {
+  visibility: hidden;
   background: @colorTitle;
   color: #fff;
   position: fixed;
@@ -275,13 +279,75 @@ footer  {
   clear: both;
 }
 
+
+/* =Vertical nav
+-------------------------------------------------------------- */
+
+#vertical_nav{
+  padding: 20px;
+  width: 200px;
+  float: left;
+}
+
+.nav-content{
+  padding-top: 20px;
+}
+
+.nav-content p{
+  padding: 5px;
+}
+
+div.nav-content p.title{
+  font-family: Telex;
+  font-size: 1.8em;
+  color: @colorDate;
+  line-height: 1em;
+}
+
+div.nav-content p.title span{
+  display: block;
+  color: #222;
+}
+
+p.tag_cloud {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.tag_cloud a{
+  color: @colorTitle;
+}
+
+.tag_cloud a:hover{
+  color: @colorLinkLight;
+}
+
+div.nav-content ul {
+  padding-left: 0;
+}
+
+div.nav-content li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+/* =Container
+-------------------------------------------------------------- */
+
+#container{
+  width: 100%;
+  float: left;
+  margin-right: -150px;
+}
+
 /* =Content
 -------------------------------------------------------------- */
 
 #content {
+  border-left: dashed @colorTitle 1px;
   max-width: @maxWidth;
-  padding: 0 40px;
-  margin: 5em auto 3em;
+  padding: 20px 40px;
+  margin-left: 240px;
   text-align: justify;
   -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;
 }
@@ -300,7 +366,7 @@ footer  {
   padding-left: 2em;
 }
 
-#content a:hover {
+a:hover {
   color: @colorLinkHover;
 }
 
@@ -327,7 +393,7 @@ footer  {
 -------------------------------------------------------------- */
 
 #featured {
-  clear: both;
+  // clear: both;
 }
 
 #featured article {
@@ -361,7 +427,7 @@ footer  {
     line-height: 1.62em;
     margin-bottom: 20px;
     padding: 20px;
-    clear: both;
+    // clear: both;
 }
 
 #author .avatar{
@@ -400,16 +466,6 @@ footer  {
 }
 */
 
-#home #posts {
-  width: 240px;
-  float: left;
-}
-
-#home #intro {
-  width: 240px;
-  float: right;
-  margin-bottom: 1.4em;
-}
 
 /* =Quotes
 -------------------------------------------------------------- */
@@ -431,7 +487,6 @@ footer  {
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
-and (min-width : 320px)
 and (max-width : 600px) {
   #github_ribbon {
     visibility: hidden;
@@ -448,6 +503,14 @@ and (max-width : 600px) {
     background-size: 15%;
   }
 
+  header {
+    visibility: visible;
+  }
+
+  #vertical_nav {
+    display: none;
+    padding: 0;
+  }
 
   header nav {
     display: block;
@@ -458,19 +521,97 @@ and (max-width : 600px) {
     text-transform: uppercase;
     font-size: .9em;
     display: block;
-    /*padding: .2em .2em .4em;*/
     padding: 0 0.2em 0 0.2em;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  .baseline {
+    font-size: 1em;
   }
 
   #content {
+    font-size: 0.9em;
+    line-height: 1.4em;
     max-width: 780px;
     padding: 0 10px;
     margin: 2em auto 3em;
     text-align: justify;
     -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;
   }
+
+  ol, ul{
+  padding-left: 15px;
+  }
+
+  #author > div {
+    margin-left: 0px;
+  }
+}
+
+/* =Button
+http://www.cssbutton.me/calebogden/4fdaf1803f2df0b712000003
+-------------------------------------------------------------- */
+
+.flat-button {
+  border-radius: 12px;
+  background: @colorTitle;
+  color: #FFF;
+  line-height: 40px;
+  width: 180px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.flat-button:hover{
+  color: #FFF;
+  background: @colorLinkLight;
+}
+
+.button {
+   background-color: rgba(18,127,210,1);
+   background-image: -webkit-linear-gradient(top, rgba(54,168,234,1) 0%,rgba(18,127,210,1) 100%);
+   background-image:    -moz-linear-gradient(top, rgba(54,168,234,1) 0%,rgba(18,127,210,1) 100%);
+   background-image:     -ms-linear-gradient(top, rgba(54,168,234,1) 0%,rgba(18,127,210,1) 100%);
+   background-image:      -o-linear-gradient(top, rgba(54,168,234,1) 0%,rgba(18,127,210,1) 100%);
+   background-image:         linear-gradient(top, rgba(54,168,234,1) 0%,rgba(18,127,210,1) 100%);
+   -webkit-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 1px 0px 0px 0px rgba(255,255,255,0.4)inset, -1px 0px 0px 0px rgba(255,255,255,0.4)inset;
+      -moz-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 1px 0px 0px 0px rgba(255,255,255,0.4)inset, -1px 0px 0px 0px rgba(255,255,255,0.4)inset;
+           box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 1px 0px 0px 0px rgba(255,255,255,0.4)inset, -1px 0px 0px 0px rgba(255,255,255,0.4)inset;
+   border: solid 1px rgba(3,94,163,1);
+   -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+           border-radius: 6px;
+   width: 180px;
+   display: inline-block;
+   font-size: 16px;
+   line-height: 40px;
+   text-align: center;
+   color: rgba(255,255,255,1);
+   text-shadow: 0px 1px 1px rgba(0,0,0,0.33)
+}
+.button:hover {
+  color: #fff;
+   background-image: -webkit-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
+   background-image:    -moz-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
+   background-image:     -ms-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
+   background-image:      -o-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
+   background-image:         linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
+   -webkit-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 0px -1px 0px 0px rgba(255,255,255,0.2)inset;
+      -moz-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 0px -1px 0px 0px rgba(255,255,255,0.2)inset;
+           box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 0px -1px 0px 0px rgba(255,255,255,0.2)inset;
+   border: solid 1px rgba(0,52,129,1);
+}
+.button:active {
+   background-image: none;
+   -webkit-box-shadow: 0px 0px 8px 2px rgba(0,61,127,0.4)inset, 0px 0px 2px 2px rgba(0,60,125,0.2)inset;
+      -moz-box-shadow: 0px 0px 8px 2px rgba(0,61,127,0.4)inset, 0px 0px 2px 2px rgba(0,60,125,0.2)inset;
+           box-shadow: 0px 0px 8px 2px rgba(0,61,127,0.4)inset, 0px 0px 2px 2px rgba(0,60,125,0.2)inset;
+   border: solid 1px rgba(0,70,131,1);
 }
