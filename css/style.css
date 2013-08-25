@@ -207,13 +207,14 @@ pre {
   background-color: #eee;
   border: 1px solid #ddd;
   padding: 5px;
-  line-height: 1em;
+  line-height: 1.2em;
   color: #444;
   overflow: auto;
   -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px inset;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  font-size: 0.8em;
 }
 pre code {
   font-size: 0.8em;

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mobilisation pour l'internet libre | cat @abulte > weblog</title>
+        <title>Databases As A Service with Docker | cat @abulte > weblog</title>
         <link rel='stylesheet'  href='/css/style.css' type='text/css' media='all' />
         <link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
@@ -60,22 +60,52 @@
             </div>
             <div id="content">
             <div id="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <h2 itemprop="datePublished">30 novembre 2012</h2>
-    <h1 itemprop="name headline">Mobilisation pour l'internet libre</h1>
-    <p itemprop="description" class="baseline">Quelques mots sur la ligue de défense de l'Internet, une initiative citoyenne que je soutiens sur ce blog.</p>
+    <h2 itemprop="datePublished">25 août 2013</h2>
+    <h1 itemprop="name headline">Databases As A Service with Docker</h1>
+    <p itemprop="description" class="baseline">Lately I've played a lot with Doctcloud's product Docker and Dokku. After a brief introduction about the technology, I'll introduce you to my project DBAAS: easily deploying databases as a service.</p>
 
     <div itemprop="articleBody">
-        <h3>The Internet Defense League</h3>
+        <h3>What is Docker</h3>
 
-<p><a href="http://internetdefenseleague.org">La ligue de défense de l&#39;Internet</a> est une initiative citoyenne visant à mobiliser un maximum d&#39;internautes lorsque que des atteintes à la liberté sur Internet menacent. Le mouvement est né dans la foulée des contestations relatives au <a href="http://fr.wikipedia.org/wiki/Stop_Online_Piracy_Act">projet de loi SOPA</a> fin 2011 / début 2012.</p>
+<p>Many great articles have already been written about <a href="http://www.docker.io">Docker</a>, so I&#39;ll be brief. <a href="http://www.docker.io">Docker</a> is...</p>
 
-<p>L&#39;objectif du réseau est d&#39;être capable, lors d&#39;actions de protestations choisies et ciblées, de mobiliser rapidement et manière simultanée un maximum de &quot;présences web&quot;, autrement dit des messages avertissant du danger sur un maximum de sites et réseaux sociaux. Concrètement, sur ce site, à chaque déclenchement de campagne par le collectif, une pop-in s&#39;affichera avec le message en question. Notons qu&#39;il est bien sûr possible de choisir les actions qu&#39;on soutient au cas par cas.</p>
+<p>TODO: links to those great articles.</p>
 
-<p><em>Une nouvelle action est prévue le 3 décembre 2012</em> en réaction à une réunion de l&#39;<a href="http://en.wikipedia.org/wiki/International_Telecommunication_Union">ITU</a> visant à débattre du contrôle de l&#39;Internet par les gouvernements des Nations Unies. Ce genre d&#39;initiative a tendance à aller à l&#39;encontre du caractère fondamentalement <em>ouvert</em> et <em>libre</em> de l&#39;Internet depuis ses débuts. <a href="http://standblog.org/blog/post/2012/11/30/regulation-d-Internet-par-les-Etats">Tristan Nitot en parle mieux que moi sur son blog</a>.</p>
+<h3>Dokku, an Heroku-like PAAS</h3>
 
-<p>Si vous voulez participer et/ou en savoir plus <a href="http://www.internetcoup.org/fr/">rendez-vous sur le site dédié à l&#39;opération</a>. Vous y trouverez notamment une vidéo explicative avec des sous-titres français.</p>
+<p>Based on top of <a href="http://www.docker.io">Docker</a> is another great product: <a href="https://github.com/progrium/dokku">Dokku</a>. <a href="https://github.com/progrium/dokku">Dokku</a> lets you run your very own PAAS (Platform As A Service) in minutes, à la <a href="https://www.heroku.com">Heroku</a>. The idea behind those PAAS is quite simple: your code lives in a Git repo (as usual). When you push your code to a special branch (the PAAS&#39;s one), it is transferred on the remote server and automatically deployed. Since it&#39;s based on <a href="http://www.docker.io">Docker</a>, each application lives in its container, thus allowing you to run multiple stacks (one per application: Python, PHP, Node.js…) in multiple versions on the same server. Contrary to Heroku, your applications don&#39;t live in the Cloud but on your very own (probably physical) server.</p>
 
-<p>Vous remarquerez également la superbe tête de chat rouge qui orne le pied de page de ce site en signe de ma participation au collectif ;-).</p>
+<blockquote>
+<p>Example: your PAAS is hosted on <code>myprivatepaas.com</code>. You have an application living in a Git repository. Just do:
+<pre>
+git add remote myprivatepaas git@myprivatepaas.com:myapp
+git push myprivatepaas master
+</pre>
+And <em>bam!</em> your app is available at <code>myapp.myprivatepaas.com</code></p>
+</blockquote>
+
+<p>This is called <em>Continuous deployment</em> and it has proven to be an extremely powerful and agile way to deliver code and (not) administer servers. As a full-stack developer, I need to be able to properly and efficiently host and deliver my own developments and I love this way of doing things. That&#39;s why I have setup my private PAAS based on <a href="https://github.com/progrium/dokku">Dokku</a> on which I can deploy any and all of my apps, without caring too much about server administration (only one to administer).</p>
+
+<h3>The missing part: databases</h3>
+
+<p>While <a href="https://github.com/progrium/dokku">Dokku</a> is great to push and host your application code, it does not handle any data storage facilities (typically databases). <a href="https://www.heroku.com">Heroku</a> does this through <a href="https://addons.heroku.com">Addons</a> attached to your apps, but this has no direct equivalent in <a href="https://github.com/progrium/dokku">Dokku</a>.</p>
+
+<p>A solution could have been to simply a MySQL and a MongoDB (the technologies I use most - or at least for MySQL the backend of the products I use most) on the server that hosts my PAAS and just create a database for each new project. But this does not feel very PAAS-sy. So instead I decided to build my own product to create and administer databases hosted on <a href="http://www.docker.io">Docker</a> containers. This product, or at least the beginning of it, is <a href="https://github.com/abulte/docker-dbaas">DBAAS</a>.</p>
+
+<p><img src="../img/dbaas_screenshot.png" width="100%"></p>
+
+<p>In its current version, it lets you create, stop, restart and remove MySQL servers in Docker containers via a WebUI or a command line tool. The MongoDB features will be coming very soon since it&#39;s just the matter of a plugin. You can add your favorite DB easily too! <a href="https://github.com/abulte/docker-dbaas">The code is on Github</a>. Once a container is created, <a href="https://github.com/abulte/docker-dbaas">DBAAS</a> shows the necessary info to connect the database, and you&#39;re good to go.</p>
+
+<p>What will come very soon, I hope:</p>
+
+<ul>
+<li>MongoDB features</li>
+<li>Automatic creation at deploy time, similar to Dotcloud features (databases declaration in <code>dotcloud.yml</code>) - via a Dokku plugin</li>
+</ul>
+
+<p>TODO: link to dotcloud.yml database features</p>
+
+<p>Do you think this product will fit your own needs? Don&#39;t hesitate to contact me to share about it. I&#39;m also a Freelancer in Paris available for <a href="http://alexandre.bulte.net">this kind of tasks and others</a>.</p>
 
     </div>
 
@@ -93,10 +123,10 @@
 </div>
 
     <span class="hide-it" itemprop="inLanguage">
-    fr
+    en
 </span>
 <span class="hide-it" itemprop="keywords">
-    web,freedom
+    docker,linux
 </span>
 
 
