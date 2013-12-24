@@ -77,27 +77,7 @@
 
 <p>I&#39;m using the <a href="https://github.com/WP-API/WP-API">WP-API Plugin</a> to serve WordPress content via a REST API, but it&#39;s almost irrelevant since you don&#39;t have to modify the plugin. The magic happens in WordPress <code>.htaccess</code>:</p>
 
-<p><code></p>
-
-<h1>CORS Headers (add this)</h1>
-
-<p><ifModule mod_headers.c>
-    Header always set Access-Control-Allow-Origin: &quot;*&quot;
-    Header always set Access-Control-Allow-Methods &quot;POST, GET, PUT, DELETE, OPTIONS&quot;
-    Header always set Access-Control-Allow-Headers &quot;X-Requested-With, content-type&quot;
-</ifModule></p>
-
-<h1>BEGIN WordPress (you should have this in your original WP .htaccess)</h1>
-
-<p><IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /</p>
-
-<h1>CORS OPTIONS (add this too)</h1>
-
-<p>RewriteCond %{REQUEST_METHOD} OPTIONS
-RewriteRule ^(.*)$ $1 [R=200,L]
-</code></p>
+<script src="https://gist.github.com/abulte/8112145.js"></script>
 
 <h4>CORS Headers</h4>
 
@@ -113,13 +93,7 @@ RewriteRule ^(.*)$ $1 [R=200,L]
 
 <p>There is absolutely nothing to do on the Angular side!! You may read here and there that you have to add stuff like this in your app config:</p>
 
-<p><code>
-myApp.config([&#39;$httpProvider&#39;, function($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common[&#39;X-Requested-With&#39;];
-    }
-]);
-</code></p>
+<script src="https://gist.github.com/abulte/8112151.js"></script>
 
 <p><strong>Don&#39;t!</strong> Maybe it was useful for older versions of Angular or for very special backends, but from my experience you do not need this. Especially the <code>httpProvider.defaults.useXDomain</code> option which does not even exist (look at <code>angular.js</code> code)!</p>
 
