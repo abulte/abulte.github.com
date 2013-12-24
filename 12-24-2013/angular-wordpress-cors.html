@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mobilisation pour l'internet libre | cat @abulte > weblog</title>
+        <title>Successful CORS configuration with AngularJS 1.2 and WordPress | cat @abulte > weblog</title>
         <link rel='stylesheet'  href='/css/style.css' type='text/css' media='all' />
         <link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
@@ -60,22 +60,68 @@
             </div>
             <div id="content">
             <div id="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <h2 itemprop="datePublished">30 novembre 2012</h2>
-    <h1 itemprop="name headline">Mobilisation pour l'internet libre</h1>
-    <p itemprop="description" class="baseline">Quelques mots sur la ligue de défense de l'Internet, une initiative citoyenne que je soutiens sur ce blog.</p>
+    <h2 itemprop="datePublished">24 décembre 2013</h2>
+    <h1 itemprop="name headline">Successful CORS configuration with AngularJS 1.2 and WordPress</h1>
+    <p itemprop="description" class="baseline">Some thoughts on a successful CORS (Cross Origin Request Sharing) setup while interrogating a remote REST API on Wordpress with AngularJS 1.2.</p>
 
     <div itemprop="articleBody">
-        <h3>The Internet Defense League</h3>
+        <h3>Context</h3>
 
-<p><a href="http://internetdefenseleague.org">La ligue de défense de l&#39;Internet</a> est une initiative citoyenne visant à mobiliser un maximum d&#39;internautes lorsque que des atteintes à la liberté sur Internet menacent. Le mouvement est né dans la foulée des contestations relatives au <a href="http://fr.wikipedia.org/wiki/Stop_Online_Piracy_Act">projet de loi SOPA</a> fin 2011 / début 2012.</p>
+<p>I&#39;m developing an hybrid mobile app with <a href="http://www.appgyver.com/steroids">AppGyver Steroids</a> - based on PhoneGap - and a WordPress backend. The architecture is the usual Web stuff: make XHR from the mobile app to a REST API. Since the mobile app is on a different domain/server/port from the mobile app, you run into the classic <a href="http://en.wikipedia.org/wiki/Same-origin_policy">Same Origin Policy problem</a>.</p>
 
-<p>L&#39;objectif du réseau est d&#39;être capable, lors d&#39;actions de protestations choisies et ciblées, de mobiliser rapidement et manière simultanée un maximum de &quot;présences web&quot;, autrement dit des messages avertissant du danger sur un maximum de sites et réseaux sociaux. Concrètement, sur ce site, à chaque déclenchement de campagne par le collectif, une pop-in s&#39;affichera avec le message en question. Notons qu&#39;il est bien sûr possible de choisir les actions qu&#39;on soutient au cas par cas.</p>
+<p>I&#39;ve been struggling to configure both WordPress and AngularJS to behave correctly. Particularly with Angular which online resources are IMHO wrong about how to deal with this problem. </p>
 
-<p><em>Une nouvelle action est prévue le 3 décembre 2012</em> en réaction à une réunion de l&#39;<a href="http://en.wikipedia.org/wiki/International_Telecommunication_Union">ITU</a> visant à débattre du contrôle de l&#39;Internet par les gouvernements des Nations Unies. Ce genre d&#39;initiative a tendance à aller à l&#39;encontre du caractère fondamentalement <em>ouvert</em> et <em>libre</em> de l&#39;Internet depuis ses débuts. <a href="http://standblog.org/blog/post/2012/11/30/regulation-d-Internet-par-les-Etats">Tristan Nitot en parle mieux que moi sur son blog</a>.</p>
+<p>Read this first for some excellent CORS context: <a href="http://www.html5rocks.com/en/tutorials/cors/">Using CORS tutorial</a>.</p>
 
-<p>Si vous voulez participer et/ou en savoir plus <a href="http://www.internetcoup.org/fr/">rendez-vous sur le site dédié à l&#39;opération</a>. Vous y trouverez notamment une vidéo explicative avec des sous-titres français.</p>
+<h3>WordPress</h3>
 
-<p>Vous remarquerez également la superbe tête de chat rouge qui orne le pied de page de ce site en signe de ma participation au collectif ;-).</p>
+<p>I&#39;m using the <a href="https://github.com/WP-API/WP-API">WP-API Plugin</a> to serve WordPress content via a REST API, but it&#39;s almost irrelevant since you don&#39;t have to modify the plugin. The magic happens in WordPress <code>.htaccess</code>:</p>
+
+<p>```</p>
+
+<h1>CORS Headers (add this)</h1>
+
+<p><ifModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin: &quot;*&quot;
+    Header always set Access-Control-Allow-Methods &quot;POST, GET, PUT, DELETE, OPTIONS&quot;
+    Header always set Access-Control-Allow-Headers &quot;X-Requested-With, content-type&quot;
+</ifModule></p>
+
+<h1>BEGIN WordPress (you should have this in your original WP .htaccess)</h1>
+
+<p><IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /</p>
+
+<h1>CORS OPTIONS (add this too)</h1>
+
+<p>RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+```</p>
+
+<h4>CORS Headers</h4>
+
+<p>The first part (headers) allows you to specify the HTTP headers needed for CORS to work. In my case (development setup), I allow remote access to all the site from all origin on all methods. <strong>Please do not use it as is on production</strong>. </p>
+
+<p><strong>An important thing to note:</strong> you have to make sure you send back to the client every  <code>Access-Control-Request-*</code> headers it sends in the form of  <code>Access-Control-Allow-* headers</code> with the same value (or the desired filtered value). I was missing <code>Content-Type</code> at first and was stuck for a while... Inspect your client requests in Firebug and build you server response accordingly.</p>
+
+<h4>OPTIONS method</h4>
+
+<p>Following the CORS protocol, the browser that does a Cross Origin Request first hits the server with the OPTIONS method to make sure it is CORS-enabled before sending the real request (POST, PUT...). Since WordPress does not know about the OPTIONS method, someone in the WP-API issue queue came up with a hack (not pretty IMHO but works): always return a <code>200 OK</code> response when hit by a OPTIONS method. Radical.</p>
+
+<h3>Angular</h3>
+
+<p>There is absolutely nothing to do on the Angular side!! You may read here and there that you have to add stuff like this in your app config:</p>
+
+<p><code>
+myApp.config([&#39;$httpProvider&#39;, function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common[&#39;X-Requested-With&#39;];
+    }
+]);
+</code></p>
+
+<p><strong>Don&#39;t!</strong> Maybe it was useful for older versions of Angular or for very special backends, but from my experience you do not need this. Especially the <code>httpProvider.defaults.useXDomain</code> option which does not even exist (look at <code>angular.js</code> code)!</p>
 
     </div>
 
@@ -93,10 +139,10 @@
 </div>
 
     <span class="hide-it" itemprop="inLanguage">
-    fr
+    en
 </span>
 <span class="hide-it" itemprop="keywords">
-    web,freedom
+    web,angularjs,wordpress
 </span>
 
 
