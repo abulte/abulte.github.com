@@ -69,7 +69,7 @@
 
 <p>I&#39;m developing an hybrid mobile app with <a href="http://www.appgyver.com/steroids">AppGyver Steroids</a> - based on PhoneGap - and a WordPress backend. The architecture is the usual Web stuff: make XHR from the mobile app to a REST API. Since the mobile app is on a different domain/server/port from the mobile app, you run into the classic <a href="http://en.wikipedia.org/wiki/Same-origin_policy">Same Origin Policy problem</a>.</p>
 
-<p>I&#39;ve been struggling to configure both WordPress and AngularJS to behave correctly. Particularly with Angular which online resources are IMHO wrong about how to deal with this problem. </p>
+<p>I&#39;ve been struggling to configure both WordPress and AngularJS to behave correctly. Particularly with Angular which online resources are IMHO wrong about how to deal with this problem.</p>
 
 <p>Read this first for some excellent CORS context: <a href="http://www.html5rocks.com/en/tutorials/cors/">Using CORS tutorial</a>.</p>
 
@@ -77,7 +77,7 @@
 
 <p>I&#39;m using the <a href="https://github.com/WP-API/WP-API">WP-API Plugin</a> to serve WordPress content via a REST API, but it&#39;s almost irrelevant since you don&#39;t have to modify the plugin. The magic happens in WordPress <code>.htaccess</code>:</p>
 
-<p>```</p>
+<p><code></p>
 
 <h1>CORS Headers (add this)</h1>
 
@@ -97,11 +97,11 @@ RewriteBase /</p>
 
 <p>RewriteCond %{REQUEST_METHOD} OPTIONS
 RewriteRule ^(.*)$ $1 [R=200,L]
-```</p>
+</code></p>
 
 <h4>CORS Headers</h4>
 
-<p>The first part (headers) allows you to specify the HTTP headers needed for CORS to work. In my case (development setup), I allow remote access to all the site from all origin on all methods. <strong>Please do not use it as is on production</strong>. </p>
+<p>The first part (headers) allows you to specify the HTTP headers needed for CORS to work. In my case (development setup), I allow remote access to all the site from all origin on all methods. <strong>Please do not use it as is on production</strong>.</p>
 
 <p><strong>An important thing to note:</strong> you have to make sure you send back to the client every  <code>Access-Control-Request-*</code> headers it sends in the form of  <code>Access-Control-Allow-* headers</code> with the same value (or the desired filtered value). I was missing <code>Content-Type</code> at first and was stuck for a while... Inspect your client requests in Firebug and build you server response accordingly.</p>
 
