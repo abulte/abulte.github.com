@@ -132,7 +132,9 @@ Content-Type: text/plain
 
 {&quot;status&quot;:0,&quot;body&quot;:{&quot;client&quot;:{&quot;client_ip&quot;:&quot;&lt;my_public_ip&gt;&quot;},&quot;device&quot;:{&quot;kd_hash&quot;:&quot;00:24:e4:0b:7a:08-d3123ce9842e809a093b136af5727a24&quot;,&quot;kp_hash&quot;:&quot;00:24:d4:0b:7c:08-1b38e4f6ebe6c27ccd241a747133978d&quot;,&quot;kl&quot;:&quot;00000000000000000&quot;,&quot;private_ip&quot;:&quot;192.168.2.3&quot;,&quot;probe_ip&quot;:&quot;&lt;my_public_ip&gt;&quot;,&quot;proxy_ip&quot;:&quot;89.30.121.12&quot;,&quot;proxy_port&quot;:1935}}}
 </code></pre></div>
-<p>This seems to be a request to get some first info about the monitor and some other network info: my iPhone is on 192.168.2.2 and gets the monitor IP (192.168.2.3). It also sends my public IP address, which is probably useful when in a remote configuration (iPhone away from LAN).</p>
+<p>This seems to be a request to get some first info about the monitor and some other network info: my iPhone is on 192.168.2.2 and gets the monitor IP (192.168.2.3).</p>
+
+<p>It also sends my public IP address, which is probably useful when in a remote configuration (iPhone away from LAN). Usefull but not cool... As soon as you plug and configure your device on your LAN, your IP is sent to Withings without any warning and even without purpose (since you&#39;re on a LAN). Furthermore, connection is not encrypted so &quot;everybody&quot; on the Internet with a sniffer can see that you&#39;re plugging in a Baby Monitor and on which IP it is.</p>
 
 <p>Another GET request from the iPhone:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">GET /cgi-bin/device?action=getproperties&amp;sessionid=3275-531a41ea-e5a6058e&amp;deviceid=699425&amp;apiver=3&amp;appliver=201&amp;appname=wibaby&amp;apppfm=ios HTTP/1.1\r\n
