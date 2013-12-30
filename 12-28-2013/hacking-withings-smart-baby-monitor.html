@@ -132,7 +132,7 @@ Content-Type: text/plain
 
 {&quot;status&quot;:0,&quot;body&quot;:{&quot;client&quot;:{&quot;client_ip&quot;:&quot;&lt;my_public_ip&gt;&quot;},&quot;device&quot;:{&quot;kd_hash&quot;:&quot;00:24:e4:0b:7a:08-d3123ce9842e809a093b136af5727a24&quot;,&quot;kp_hash&quot;:&quot;00:24:d4:0b:7c:08-1b38e4f6ebe6c27ccd241a747133978d&quot;,&quot;kl&quot;:&quot;00000000000000000&quot;,&quot;private_ip&quot;:&quot;192.168.2.3&quot;,&quot;probe_ip&quot;:&quot;&lt;my_public_ip&gt;&quot;,&quot;proxy_ip&quot;:&quot;89.30.121.12&quot;,&quot;proxy_port&quot;:1935}}}
 </code></pre></div>
-<p>This seems to be a request to get some first info about the monitor and some other network info: my iPhone is on 192.168.2.2 and gets the monitor IP (192.168.1.3). It also sends my public IP address, which is probably useful when in a remote configuration (iPhone away from LAN).</p>
+<p>This seems to be a request to get some first info about the monitor and some other network info: my iPhone is on 192.168.2.2 and gets the monitor IP (192.168.2.3). It also sends my public IP address, which is probably useful when in a remote configuration (iPhone away from LAN).</p>
 
 <p>Another GET request from the iPhone:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">GET /cgi-bin/device?action=getproperties&amp;sessionid=3275-531a41ea-e5a6058e&amp;deviceid=699425&amp;apiver=3&amp;appliver=201&amp;appname=wibaby&amp;apppfm=ios HTTP/1.1\r\n
@@ -174,9 +174,9 @@ action=store&amp;sessionid=5339-21c7517b-0ec5d323&amp;events={&quot;events&quot;
 <p>Those HTTP requests are cool but they don&#39;t seem to provide a lot of usable information / data from the monitor. Let&#39;s look at the RTMP stuff. RTMP is used primarily to transport video and audio, so we can hope to get the video feed from the monitor on the client of our choice.</p>
 
 <p>I&#39;ve looked at some of the RTMP packets to find some interesting stuff. I found something in one of the handshake packets data:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">$z  pEER@@&#39;5B}&amp;vlC 
+<div class="highlight"><pre><code class="text language-text" data-lang="text">$z  pEER@@&#39;5B}&amp;vlC
 Nrconnect?app200:24:e4:0b:7a:08-cd65e34332eba8dad2c474b51e53cd1cflashverRTMP 0.9swfUrlfile://c:/gentilflash.swftcUrlJrtmp://192.168.2.3:1935/00:24:e4:0b:7a:08-cd65e34332eba8dad2c474b51e53cd1cfpadcapabilities@.audioCodecs@videoCodecs@`videoFunctionpageUrlfile://c:/gentillepage.htmlobjectEncoding@        accountidw
-clientnamemyIPhone  clientuid 0f607264fc6318a92b9e13c65db7de4f  
+clientnamemyIPhone  clientuid 0f607264fc6318a92b9e13c65db7de4f
 </code></pre></div>
 <p>Bingo! In that scrambled characters mess we have something that looks like the URL of the SWF video file on the monitor. Now we need a RTMP client to read it on the computer of our choice. I used <a href="http://rtmpdump.mplayerhq.hu">RTMPDump</a>.</p>
 
